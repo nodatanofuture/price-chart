@@ -402,13 +402,21 @@
                             display: false
                         },
                         tooltip: {
-                            mode: 'index',
-                            intersect: false,
+                            mode: 'nearest',
+                            intersect: true,
                             backgroundColor: 'rgba(0,0,0,0.8)',
                             titleColor: '#fff',
                             bodyColor: '#fff',
                             borderColor: '#fff',
-                            borderWidth: 1
+                            borderWidth: 1,
+                            callbacks: {
+                                title: function(context) {
+                                    return context[0].label;
+                                },
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.parsed.y.toLocaleString() + '원';
+                                }
+                            }
                         }
                     },
                     scales: {
@@ -445,7 +453,7 @@
                     interaction: {
                         mode: 'nearest',
                         axis: 'x',
-                        intersect: false
+                        intersect: true
                     }
                 }
             });
