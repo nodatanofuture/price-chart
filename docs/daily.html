@@ -404,11 +404,14 @@
                         tooltip: {
                             mode: 'nearest',
                             intersect: true,
-                            backgroundColor: 'rgba(0,0,0,0.8)',
+                            backgroundColor: 'rgba(0,0,0,0.9)',
                             titleColor: '#fff',
                             bodyColor: '#fff',
                             borderColor: '#fff',
                             borderWidth: 1,
+                            padding: 8,
+                            cornerRadius: 6,
+                            displayColors: false,
                             callbacks: {
                                 title: function(context) {
                                     return context[0].label;
@@ -416,6 +419,52 @@
                                 label: function(context) {
                                     return context.dataset.label + ': ' + context.parsed.y.toLocaleString() + '원';
                                 }
+                            },
+                            position: function(context, options) {
+                                const chart = context.chart;
+                                const tooltip = context.tooltip;
+                                const canvas = chart.canvas;
+                                const rect = canvas.getBoundingClientRect();
+                                
+                                // 툴팁 크기 계산
+                                const tooltipWidth = tooltip.width || 200;
+                                const tooltipHeight = tooltip.height || 60;
+                                
+                                // 마우스 위치
+                                const mouseX = tooltip.caretX;
+                                const mouseY = tooltip.caretY;
+                                
+                                // 화면 경계 확인
+                                const screenWidth = window.innerWidth;
+                                const screenHeight = window.innerHeight;
+                                
+                                let x = mouseX;
+                                let y = mouseY - tooltipHeight - 10;
+                                
+                                // 오른쪽 경계 체크
+                                if (x + tooltipWidth > screenWidth - 20) {
+                                    x = screenWidth - tooltipWidth - 20;
+                                }
+                                
+                                // 왼쪽 경계 체크
+                                if (x < 20) {
+                                    x = 20;
+                                }
+                                
+                                // 위쪽 경계 체크 (툴팁이 위에 표시될 때)
+                                if (y < 20) {
+                                    y = mouseY + 20; // 아래쪽에 표시
+                                }
+                                
+                                // 아래쪽 경계 체크
+                                if (y + tooltipHeight > screenHeight - 20) {
+                                    y = screenHeight - tooltipHeight - 20;
+                                }
+                                
+                                return {
+                                    x: x,
+                                    y: y
+                                };
                             }
                         }
                     },
