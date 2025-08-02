@@ -586,7 +586,9 @@
                     if (points.length > 0) {
                         const firstPoint = points[0];
                         const datasetIndex = firstPoint.datasetIndex;
-                        const hoveredLabel = allDatasets[datasetIndex].label;
+                        const datasets = priceChart.data.datasets;
+                        if (datasets && datasets[datasetIndex]) {
+                            const hoveredLabel = datasets[datasetIndex].label;
                         
                         // 해당 제품 하이라이트
                         productItems.forEach(item => {
