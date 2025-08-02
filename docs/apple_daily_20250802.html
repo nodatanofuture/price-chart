@@ -465,34 +465,7 @@
                                     return context.dataset.label + ': ' + context.parsed.y.toLocaleString() + '원';
                                 }
                             },
-                            external: function(context) {
-                                const tooltip = context.tooltip;
-                                const productItems = document.querySelectorAll('.product-item');
-                                
-                                // 모든 제품 아이템의 스타일 초기화
-                                productItems.forEach(item => {
-                                    item.style.opacity = '0.3';
-                                    item.style.transform = 'scale(1)';
-                                });
-                                
-                                // 툴팁이 표시될 때만 하이라이트
-                                if (tooltip.opacity > 0) {
-                                    const tooltipItems = tooltip.dataPoints;
-                                    if (tooltipItems && tooltipItems.length > 0) {
-                                        const hoveredDataset = tooltipItems[0].datasetIndex;
-                                        const hoveredLabel = allDatasets[hoveredDataset].label;
-                                        
-                                        // 해당 제품 찾아서 하이라이트
-                                        productItems.forEach(item => {
-                                            const productName = item.querySelector('.product-name').textContent;
-                                            if (productName === hoveredLabel) {
-                                                item.style.opacity = '1';
-                                                item.style.transform = 'scale(1.02)';
-                                            }
-                                        });
-                                    }
-                                }
-                            },
+
                             position: function(context, options) {
                                 const chart = context.chart;
                                 const tooltip = context.tooltip;
@@ -635,6 +608,54 @@
         
         // 초기 차트 생성
         initChart();
+        
+        // 차트 하이라이트 기능
+        function setupChartHighlight() {
+            const canvas = document.getElementById('priceChart');
+            const productItems = document.querySelectorAll('.product-item');
+            
+            canvas.addEventListener('mousemove', function(e) {
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                // 모든 제품 아이템 스타일 초기화
+                productItems.forEach(item => {
+                    item.style.opacity = '0.3';
+                    item.style.transform = 'scale(1)';
+                });
+                
+                // 차트에서 가장 가까운 포인트 찾기
+                if (priceChart) {
+                    const points = priceChart.getElementsAtEventForMode(e, 'nearest', { intersect: true }, false);
+                    if (points.length > 0) {
+                        const firstPoint = points[0];
+                        const datasetIndex = firstPoint.datasetIndex;
+                        const hoveredLabel = allDatasets[datasetIndex].label;
+                        
+                        // 해당 제품 하이라이트
+                        productItems.forEach(item => {
+                            const productName = item.querySelector('.product-name').textContent;
+                            if (productName === hoveredLabel) {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1.02)';
+                            }
+                        });
+                    }
+                }
+            });
+            
+            canvas.addEventListener('mouseleave', function() {
+                // 마우스가 차트를 벗어나면 모든 하이라이트 제거
+                productItems.forEach(item => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                });
+            });
+        }
+        
+        // 하이라이트 기능 설정
+        setupChartHighlight();
     </script>
 </body>
 </html>
