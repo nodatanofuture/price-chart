@@ -465,6 +465,34 @@
                                     return context.dataset.label + ': ' + context.parsed.y.toLocaleString() + '원';
                                 }
                             },
+                            external: function(context) {
+                                const tooltip = context.tooltip;
+                                const productItems = document.querySelectorAll('.product-item');
+                                
+                                // 모든 제품 아이템의 스타일 초기화
+                                productItems.forEach(item => {
+                                    item.style.opacity = '0.3';
+                                    item.style.transform = 'scale(1)';
+                                });
+                                
+                                // 툴팁이 표시될 때만 하이라이트
+                                if (tooltip.opacity > 0) {
+                                    const tooltipItems = tooltip.dataPoints;
+                                    if (tooltipItems && tooltipItems.length > 0) {
+                                        const hoveredDataset = tooltipItems[0].datasetIndex;
+                                        const hoveredLabel = allDatasets[hoveredDataset].label;
+                                        
+                                        // 해당 제품 찾아서 하이라이트
+                                        productItems.forEach(item => {
+                                            const productName = item.querySelector('.product-name').textContent;
+                                            if (productName === hoveredLabel) {
+                                                item.style.opacity = '1';
+                                                item.style.transform = 'scale(1.02)';
+                                            }
+                                        });
+                                    }
+                                }
+                            },
                             position: function(context, options) {
                                 const chart = context.chart;
                                 const tooltip = context.tooltip;
