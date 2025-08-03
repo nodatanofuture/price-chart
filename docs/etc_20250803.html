@@ -274,8 +274,8 @@
         <div class="stats">
             <h3>📈 차트 통계</h3>
             <p>총 제품 수: 3개</p>
-            <p>총 데이터 포인트: 29개</p>
-            <p>최신 업데이트: 2025-08-03 13:39:38</p>
+            <p>총 데이터 포인트: 33개</p>
+            <p>최신 업데이트: 2025-08-03 13:48:41</p>
             <p>현재 선택: <span id="currentCategory">전체</span></p>
         </div>
     </div>
@@ -301,8 +301,8 @@
     <script>
         // 전역 변수
         let priceChart;
-        let allDatasets = [{"label": "\ub4dc\uc2dc\ubaa8\ub124 365 \ud504\ub85c\ubc14\uc774\uc624\ud2f1\uc2a4 \ucea1\uc290, 30\uc815, 1\uac1c", "data": [38400, null, 38400, 38400, 38400, null, 38400, null, 38400, null, 38400, null], "borderColor": "rgb(75, 192, 192)", "backgroundColor": "rgba(75, 192, 192, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uc81c\uc8fc\uc0bc\ub2e4\uc218 \uadf8\ub9b0 \ubb34\ub77c\ubca8, 500ml, 60\uac1c", "data": [null, 28800, 28800, 28800, null, 28800, null, 28800, 28800, null, null, 28800], "borderColor": "rgb(255, 99, 132)", "backgroundColor": "rgba(255, 99, 132, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uc81c\uc8fc\uc0bc\ub2e4\uc218 \uadf8\ub9b0 \ubb34\ub77c\ubca8, 2L, 12\uac1c", "data": [null, 12960, null, 12960, null, 12960, null, 12960, null, 12960, null, 12960], "borderColor": "rgb(54, 162, 235)", "backgroundColor": "rgba(54, 162, 235, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}];
-        let allDates = ["08-02 16:11", "08-02 16:12", "08-02 17:11", "08-02 17:12", "08-03 00:00", "08-03 00:01", "08-03 00:11", "08-03 00:12", "08-03 01:07", "08-03 01:08", "08-03 13:38", "08-03 13:39"];
+        let allDatasets = [{"label": "\ub4dc\uc2dc\ubaa8\ub124 365 \ud504\ub85c\ubc14\uc774\uc624\ud2f1\uc2a4 \ucea1\uc290, 30\uc815, 1\uac1c", "data": [38400, null, 38400, 38400, 38400, null, 38400, null, 38400, null, 38400, null, 38400, 38400], "borderColor": "rgb(75, 192, 192)", "backgroundColor": "rgba(75, 192, 192, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uc81c\uc8fc\uc0bc\ub2e4\uc218 \uadf8\ub9b0 \ubb34\ub77c\ubca8, 500ml, 60\uac1c", "data": [null, 28800, 28800, 28800, null, 28800, null, 28800, 28800, null, null, 28800, null, 28800], "borderColor": "rgb(255, 99, 132)", "backgroundColor": "rgba(255, 99, 132, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uc81c\uc8fc\uc0bc\ub2e4\uc218 \uadf8\ub9b0 \ubb34\ub77c\ubca8, 2L, 12\uac1c", "data": [null, 12960, null, 12960, null, 12960, null, 12960, null, 12960, null, 12960, null, 12960], "borderColor": "rgb(54, 162, 235)", "backgroundColor": "rgba(54, 162, 235, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}];
+        let allDates = ["08-02 16:11", "08-02 16:12", "08-02 17:11", "08-02 17:12", "08-03 00:00", "08-03 00:01", "08-03 00:11", "08-03 00:12", "08-03 01:07", "08-03 01:08", "08-03 13:38", "08-03 13:39", "08-03 13:47", "08-03 13:48"];
         
         function initChart() {
             const canvas = document.getElementById('priceChart');
