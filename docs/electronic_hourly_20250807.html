@@ -265,8 +265,8 @@
         <div class="stats">
             <h3>📈 차트 통계</h3>
             <p>총 제품 수: 2개</p>
-            <p>총 데이터 포인트: 4개</p>
-            <p>최신 업데이트: 2025-08-07 12:22:41</p>
+            <p>총 데이터 포인트: 6개</p>
+            <p>최신 업데이트: 2025-08-07 12:34:47</p>
             <p>현재 선택: <span id="currentCategory">전체</span></p>
         </div>
     </div>
@@ -292,8 +292,8 @@
     <script>
         // 전역 변수
         let priceChart;
-        let allDatasets = [{"label": "LG\uc804\uc790 \uc778\ubc84\ud130 56.9\u33a1(17.2\ud3c9) \ud718\uc13c \uc624\ube0c\uc81c\uceec\ub809\uc158 \uc704\ub108 \uc5d0\uc5b4\ucee8 FQ17HDWHCNP1 \ubc29\ubb38\uc124\uce58", "data": [1450000, null, 1450000], "borderColor": "rgb(75, 192, 192)", "backgroundColor": "rgba(75, 192, 192, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "LG\uc804\uc790 \ud718\uc13c \uc624\ube0c\uc81c\uceec\ub809\uc158 \uc704\ub108 2in1 \uc5d0\uc5b4\ucee8 FQ17HDWHP2 \ubc29\ubb38\uc124\uce58", "data": [null, 1750000, 1750000], "borderColor": "rgb(255, 99, 132)", "backgroundColor": "rgba(255, 99, 132, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}];
-        let allDates = ["12:08", "12:09", "12:22"];
+        let allDatasets = [{"label": "LG\uc804\uc790 \uc778\ubc84\ud130 56.9\u33a1(17.2\ud3c9) \ud718\uc13c \uc624\ube0c\uc81c\uceec\ub809\uc158 \uc704\ub108 \uc5d0\uc5b4\ucee8 FQ17HDWHCNP1 \ubc29\ubb38\uc124\uce58", "data": [1450000, null, 1450000, 1450000], "borderColor": "rgb(75, 192, 192)", "backgroundColor": "rgba(75, 192, 192, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "LG\uc804\uc790 \ud718\uc13c \uc624\ube0c\uc81c\uceec\ub809\uc158 \uc704\ub108 2in1 \uc5d0\uc5b4\ucee8 FQ17HDWHP2 \ubc29\ubb38\uc124\uce58", "data": [null, 1750000, 1750000, 1750000], "borderColor": "rgb(255, 99, 132)", "backgroundColor": "rgba(255, 99, 132, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}];
+        let allDates = ["12:08", "12:09", "12:22", "12:34"];
         
         function initChart() {
             const canvas = document.getElementById('priceChart');
