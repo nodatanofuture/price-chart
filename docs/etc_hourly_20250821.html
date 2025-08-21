@@ -416,7 +416,7 @@
                             <div class="color-dot" style="background-color: rgb(255, 205, 86);"></div>
                             <div class="product-info">
                                 <div class="product-name">제주삼다수 그린 무라벨, 500ml, 60개</div>
-                                <div class="product-price">최신가: 28,800원</div>
+                                <div class="product-price">최신가: 25,920원</div>
                             </div>
                             <a href="https://link.coupang.com/a/cIfdOJ" target="_blank" class="buy-button">구매하기</a>
                         </div>
@@ -427,8 +427,8 @@
         <div class="stats">
             <h3>📈 차트 통계</h3>
             <p>총 제품 수: 4개</p>
-            <p>총 데이터 포인트: 4개</p>
-            <p>최신 업데이트: 2025-08-21 05:00:00</p>
+            <p>총 데이터 포인트: 7개</p>
+            <p>최신 업데이트: 2025-08-21 12:00:00</p>
             <p>현재 선택: <span id="currentCategory">전체</span></p>
         </div>
     </div>
@@ -454,8 +454,8 @@
     <script>
         // 전역 변수
         let priceChart;
-        let allDatasets = [{"label": "\ub3c8\uc2dc\ubaac \ucc29\uc999 \uc624\ub80c\uc9c0 \uc8fc\uc2a4, 1L, 6", "data": [28680], "borderColor": "rgb(75, 192, 192)", "backgroundColor": "rgba(75, 192, 192, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\ub4dc\uc2dc\ubaa8\ub124 365 \ud504\ub85c\ubc14\uc774\uc624\ud2f1\uc2a4 \ucea1\uc290, 30\uc815, 1\uac1c", "data": [38400], "borderColor": "rgb(255, 99, 132)", "backgroundColor": "rgba(255, 99, 132, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uc81c\uc8fc\uc0bc\ub2e4\uc218 \uadf8\ub9b0 \ubb34\ub77c\ubca8, 2L, 12\uac1c", "data": [12960], "borderColor": "rgb(54, 162, 235)", "backgroundColor": "rgba(54, 162, 235, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uc81c\uc8fc\uc0bc\ub2e4\uc218 \uadf8\ub9b0 \ubb34\ub77c\ubca8, 500ml, 60\uac1c", "data": [28800], "borderColor": "rgb(255, 205, 86)", "backgroundColor": "rgba(255, 205, 86, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}];
-        let allDates = ["05"];
+        let allDatasets = [{"label": "\ub3c8\uc2dc\ubaac \ucc29\uc999 \uc624\ub80c\uc9c0 \uc8fc\uc2a4, 1L, 6", "data": [28680, null], "borderColor": "rgb(75, 192, 192)", "backgroundColor": "rgba(75, 192, 192, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\ub4dc\uc2dc\ubaa8\ub124 365 \ud504\ub85c\ubc14\uc774\uc624\ud2f1\uc2a4 \ucea1\uc290, 30\uc815, 1\uac1c", "data": [38400, 38400], "borderColor": "rgb(255, 99, 132)", "backgroundColor": "rgba(255, 99, 132, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uc81c\uc8fc\uc0bc\ub2e4\uc218 \uadf8\ub9b0 \ubb34\ub77c\ubca8, 2L, 12\uac1c", "data": [12960, 12960], "borderColor": "rgb(54, 162, 235)", "backgroundColor": "rgba(54, 162, 235, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uc81c\uc8fc\uc0bc\ub2e4\uc218 \uadf8\ub9b0 \ubb34\ub77c\ubca8, 500ml, 60\uac1c", "data": [28800, 25920], "borderColor": "rgb(255, 205, 86)", "backgroundColor": "rgba(255, 205, 86, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}];
+        let allDates = ["05", "12"];
         
         function initChart() {
             const canvas = document.getElementById('priceChart');
