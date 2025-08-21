@@ -357,13 +357,13 @@
                 <div class="filter-item">
                     <label for="category2Filter">구분2:</label>
                     <select id="category2Filter" onchange="filterByCategory()">
-                        <option value="전체">전체</option><option value="생활용품">생활용품</option>
+                        <option value="전체">전체</option><option value="생활용품">생활용품</option><option value="영양제">영양제</option>
                     </select>
                 </div>
                 <div class="filter-item">
                     <label for="category3Filter">구분3:</label>
                     <select id="category3Filter" onchange="filterByCategory()">
-                        <option value="전체">전체</option><option value="돈시몬 착즙 오렌지 주스">돈시몬 착즙 오렌지 주스</option><option value="물">물</option><option value="유산균">유산균</option>
+                        <option value="전체">전체</option><option value="고려은단 비타민C 1000">고려은단 비타민C 1000</option><option value="돈시몬 착즙 오렌지 주스">돈시몬 착즙 오렌지 주스</option><option value="물">물</option><option value="삼다수">삼다수</option><option value="솔가 비타민 D3 1000IU">솔가 비타민 D3 1000IU</option><option value="솔가 엽산 800, 100정, 1개">솔가 엽산 800, 100정, 1개</option><option value="솔가 활성 엽산 680 위드 비타민 B12">솔가 활성 엽산 680 위드 비타민 B12</option><option value="유산균">유산균</option>
                     </select>
                 </div>
             </div>
@@ -421,14 +421,50 @@
                             <a href="https://link.coupang.com/a/cIfdOJ" target="_blank" class="buy-button">구매하기</a>
                         </div>
             
+                        <div class="product-item">
+                            <div class="color-dot" style="background-color: rgb(153, 102, 255);"></div>
+                            <div class="product-info">
+                                <div class="product-name">고려은단 비타민C 1000 + 쇼핑백, 180정, 1개</div>
+                                <div class="product-price">최신가: 17,900원</div>
+                            </div>
+                            <a href="https://link.coupang.com/a/cJAa49" target="_blank" class="buy-button">구매하기</a>
+                        </div>
+            
+                        <div class="product-item">
+                            <div class="color-dot" style="background-color: rgb(255, 159, 64);"></div>
+                            <div class="product-info">
+                                <div class="product-name">솔가 비타민 D3 (콜레칼시페롤) 1000IU 타블렛, 180정, 1개</div>
+                                <div class="product-price">최신가: 16,020원</div>
+                            </div>
+                            <a href="https://link.coupang.com/a/cJz96D" target="_blank" class="buy-button">구매하기</a>
+                        </div>
+            
+                        <div class="product-item">
+                            <div class="color-dot" style="background-color: rgb(199, 199, 199);"></div>
+                            <div class="product-info">
+                                <div class="product-name">솔가 엽산 800, 100정, 1개</div>
+                                <div class="product-price">최신가: 12,900원</div>
+                            </div>
+                            <a href="https://link.coupang.com/a/cLJW8o" target="_blank" class="buy-button">구매하기</a>
+                        </div>
+            
+                        <div class="product-item">
+                            <div class="color-dot" style="background-color: rgb(83, 102, 255);"></div>
+                            <div class="product-info">
+                                <div class="product-name">솔가 활성 엽산 680 위드 비타민 B12</div>
+                                <div class="product-price">최신가: 34,000원</div>
+                            </div>
+                            <a href="https://link.coupang.com/a/cLJVrO" target="_blank" class="buy-button">구매하기</a>
+                        </div>
+            
             </div>
         </div>
         
         <div class="stats">
             <h3>📈 차트 통계</h3>
-            <p>총 제품 수: 4개</p>
-            <p>총 데이터 포인트: 8개</p>
-            <p>최신 업데이트: 2025-08-21 12:00:00</p>
+            <p>총 제품 수: 8개</p>
+            <p>총 데이터 포인트: 16개</p>
+            <p>최신 업데이트: 2025-08-21 19:00:00</p>
             <p>현재 선택: <span id="currentCategory">전체</span></p>
         </div>
     </div>
@@ -454,8 +490,8 @@
     <script>
         // 전역 변수
         let priceChart;
-        let allDatasets = [{"label": "\ub3c8\uc2dc\ubaac \ucc29\uc999 \uc624\ub80c\uc9c0 \uc8fc\uc2a4, 1L, 6", "data": [28680, 28680], "borderColor": "rgb(75, 192, 192)", "backgroundColor": "rgba(75, 192, 192, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\ub4dc\uc2dc\ubaa8\ub124 365 \ud504\ub85c\ubc14\uc774\uc624\ud2f1\uc2a4 \ucea1\uc290, 30\uc815, 1\uac1c", "data": [38400, 38400], "borderColor": "rgb(255, 99, 132)", "backgroundColor": "rgba(255, 99, 132, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uc81c\uc8fc\uc0bc\ub2e4\uc218 \uadf8\ub9b0 \ubb34\ub77c\ubca8, 2L, 12\uac1c", "data": [12960, 12960], "borderColor": "rgb(54, 162, 235)", "backgroundColor": "rgba(54, 162, 235, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uc81c\uc8fc\uc0bc\ub2e4\uc218 \uadf8\ub9b0 \ubb34\ub77c\ubca8, 500ml, 60\uac1c", "data": [28800, 25920], "borderColor": "rgb(255, 205, 86)", "backgroundColor": "rgba(255, 205, 86, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}];
-        let allDates = ["05", "12"];
+        let allDatasets = [{"label": "\ub3c8\uc2dc\ubaac \ucc29\uc999 \uc624\ub80c\uc9c0 \uc8fc\uc2a4, 1L, 6", "data": [28680, 28680, 28680], "borderColor": "rgb(75, 192, 192)", "backgroundColor": "rgba(75, 192, 192, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\ub4dc\uc2dc\ubaa8\ub124 365 \ud504\ub85c\ubc14\uc774\uc624\ud2f1\uc2a4 \ucea1\uc290, 30\uc815, 1\uac1c", "data": [38400, 38400, 38400], "borderColor": "rgb(255, 99, 132)", "backgroundColor": "rgba(255, 99, 132, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uc81c\uc8fc\uc0bc\ub2e4\uc218 \uadf8\ub9b0 \ubb34\ub77c\ubca8, 2L, 12\uac1c", "data": [12960, 12960, 12960], "borderColor": "rgb(54, 162, 235)", "backgroundColor": "rgba(54, 162, 235, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uc81c\uc8fc\uc0bc\ub2e4\uc218 \uadf8\ub9b0 \ubb34\ub77c\ubca8, 500ml, 60\uac1c", "data": [28800, 25920, 25920], "borderColor": "rgb(255, 205, 86)", "backgroundColor": "rgba(255, 205, 86, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uace0\ub824\uc740\ub2e8 \ube44\ud0c0\ubbfcC 1000 + \uc1fc\ud551\ubc31, 180\uc815, 1\uac1c", "data": [null, null, 17900], "borderColor": "rgb(153, 102, 255)", "backgroundColor": "rgba(153, 102, 255, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uc194\uac00 \ube44\ud0c0\ubbfc D3 (\ucf5c\ub808\uce7c\uc2dc\ud398\ub864) 1000IU \ud0c0\ube14\ub81b, 180\uc815, 1\uac1c", "data": [null, null, 16020], "borderColor": "rgb(255, 159, 64)", "backgroundColor": "rgba(255, 159, 64, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uc194\uac00 \uc5fd\uc0b0 800, 100\uc815, 1\uac1c", "data": [null, null, 12900], "borderColor": "rgb(199, 199, 199)", "backgroundColor": "rgba(199, 199, 199, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uc194\uac00 \ud65c\uc131 \uc5fd\uc0b0 680 \uc704\ub4dc \ube44\ud0c0\ubbfc B12", "data": [null, null, 34000], "borderColor": "rgb(83, 102, 255)", "backgroundColor": "rgba(83, 102, 255, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}];
+        let allDates = ["05", "12", "19"];
         
         function initChart() {
             const canvas = document.getElementById('priceChart');
@@ -578,7 +614,7 @@
             const category3Filter = document.getElementById('category3Filter').value;
             
             // 제품별 구분 정보
-            const productCategories = {"\ub3c8\uc2dc\ubaac \ucc29\uc999 \uc624\ub80c\uc9c0 \uc8fc\uc2a4, 1L, 6": {"\uad6c\ubd842": "\uc0dd\ud65c\uc6a9\ud488", "\uad6c\ubd843": "\ub3c8\uc2dc\ubaac \ucc29\uc999 \uc624\ub80c\uc9c0 \uc8fc\uc2a4"}, "\ub4dc\uc2dc\ubaa8\ub124 365 \ud504\ub85c\ubc14\uc774\uc624\ud2f1\uc2a4 \ucea1\uc290, 30\uc815, 1\uac1c": {"\uad6c\ubd842": "\uc0dd\ud65c\uc6a9\ud488", "\uad6c\ubd843": "\uc720\uc0b0\uade0"}, "\uc81c\uc8fc\uc0bc\ub2e4\uc218 \uadf8\ub9b0 \ubb34\ub77c\ubca8, 2L, 12\uac1c": {"\uad6c\ubd842": "\uc0dd\ud65c\uc6a9\ud488", "\uad6c\ubd843": "\ubb3c"}, "\uc81c\uc8fc\uc0bc\ub2e4\uc218 \uadf8\ub9b0 \ubb34\ub77c\ubca8, 500ml, 60\uac1c": {"\uad6c\ubd842": "\uc0dd\ud65c\uc6a9\ud488", "\uad6c\ubd843": "\ubb3c"}};
+            const productCategories = {"\ub3c8\uc2dc\ubaac \ucc29\uc999 \uc624\ub80c\uc9c0 \uc8fc\uc2a4, 1L, 6": {"\uad6c\ubd842": "\uc0dd\ud65c\uc6a9\ud488", "\uad6c\ubd843": "\ub3c8\uc2dc\ubaac \ucc29\uc999 \uc624\ub80c\uc9c0 \uc8fc\uc2a4"}, "\ub4dc\uc2dc\ubaa8\ub124 365 \ud504\ub85c\ubc14\uc774\uc624\ud2f1\uc2a4 \ucea1\uc290, 30\uc815, 1\uac1c": {"\uad6c\ubd842": "\uc601\uc591\uc81c", "\uad6c\ubd843": "\uc720\uc0b0\uade0"}, "\uc81c\uc8fc\uc0bc\ub2e4\uc218 \uadf8\ub9b0 \ubb34\ub77c\ubca8, 2L, 12\uac1c": {"\uad6c\ubd842": "\uc0dd\ud65c\uc6a9\ud488", "\uad6c\ubd843": "\uc0bc\ub2e4\uc218"}, "\uc81c\uc8fc\uc0bc\ub2e4\uc218 \uadf8\ub9b0 \ubb34\ub77c\ubca8, 500ml, 60\uac1c": {"\uad6c\ubd842": "\uc0dd\ud65c\uc6a9\ud488", "\uad6c\ubd843": "\uc0bc\ub2e4\uc218"}, "\uace0\ub824\uc740\ub2e8 \ube44\ud0c0\ubbfcC 1000 + \uc1fc\ud551\ubc31, 180\uc815, 1\uac1c": {"\uad6c\ubd842": "\uc601\uc591\uc81c", "\uad6c\ubd843": "\uace0\ub824\uc740\ub2e8 \ube44\ud0c0\ubbfcC 1000"}, "\uc194\uac00 \ube44\ud0c0\ubbfc D3 (\ucf5c\ub808\uce7c\uc2dc\ud398\ub864) 1000IU \ud0c0\ube14\ub81b, 180\uc815, 1\uac1c": {"\uad6c\ubd842": "\uc601\uc591\uc81c", "\uad6c\ubd843": "\uc194\uac00 \ube44\ud0c0\ubbfc D3 1000IU"}, "\uc194\uac00 \uc5fd\uc0b0 800, 100\uc815, 1\uac1c": {"\uad6c\ubd842": "\uc601\uc591\uc81c", "\uad6c\ubd843": "\uc194\uac00 \uc5fd\uc0b0 800, 100\uc815, 1\uac1c"}, "\uc194\uac00 \ud65c\uc131 \uc5fd\uc0b0 680 \uc704\ub4dc \ube44\ud0c0\ubbfc B12": {"\uad6c\ubd842": "\uc601\uc591\uc81c", "\uad6c\ubd843": "\uc194\uac00 \ud65c\uc131 \uc5fd\uc0b0 680 \uc704\ub4dc \ube44\ud0c0\ubbfc B12"}};
             
             // 필터링된 데이터셋 생성
             const filteredDatasets = allDatasets.filter(dataset => {
