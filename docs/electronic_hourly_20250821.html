@@ -427,7 +427,7 @@
         <div class="stats">
             <h3>📈 차트 통계</h3>
             <p>총 제품 수: 4개</p>
-            <p>총 데이터 포인트: 5개</p>
+            <p>총 데이터 포인트: 7개</p>
             <p>최신 업데이트: 2025-08-21 12:00:00</p>
             <p>현재 선택: <span id="currentCategory">전체</span></p>
         </div>
@@ -454,7 +454,7 @@
     <script>
         // 전역 변수
         let priceChart;
-        let allDatasets = [{"label": "LG\uc804\uc790 \uc778\ubc84\ud130 56.9\u33a1(17.2\ud3c9) \ud718\uc13c \uc624\ube0c\uc81c\uceec\ub809\uc158 \uc704\ub108 \uc5d0\uc5b4\ucee8 FQ17HDWHCNP1 \ubc29\ubb38\uc124\uce58", "data": [1260000, 1450000], "borderColor": "rgb(75, 192, 192)", "backgroundColor": "rgba(75, 192, 192, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "LG\uc804\uc790 \ud718\uc13c \uc624\ube0c\uc81c\uceec\ub809\uc158 \uc704\ub108 2in1 \uc5d0\uc5b4\ucee8 FQ17HDWHP2 \ubc29\ubb38\uc124\uce58", "data": [1750000, null], "borderColor": "rgb(255, 99, 132)", "backgroundColor": "rgba(255, 99, 132, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uc0e4\uc624\ubbf8 1S \ubbf8\uc9c0\uc544 \ubaa8\ub2c8\ud130 \uc7a5\ucc29 \ub7a8\ud504 MJGJD02YL", "data": [40500, null], "borderColor": "rgb(54, 162, 235)", "backgroundColor": "rgba(54, 162, 235, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\ud0c0\ud3ec \uc2e4\uc678\uc6a9 2K QHD \ubc30\ud130\ub9ac \uce74\uba54\ub77c \ud0dc\uc591\uad11 \ucda9\uc804 \ud328\ub110 \ud0a4\ud2b8 \uc138\ud2b8", "data": [125100, null], "borderColor": "rgb(255, 205, 86)", "backgroundColor": "rgba(255, 205, 86, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}];
+        let allDatasets = [{"label": "LG\uc804\uc790 \uc778\ubc84\ud130 56.9\u33a1(17.2\ud3c9) \ud718\uc13c \uc624\ube0c\uc81c\uceec\ub809\uc158 \uc704\ub108 \uc5d0\uc5b4\ucee8 FQ17HDWHCNP1 \ubc29\ubb38\uc124\uce58", "data": [1260000, 1450000], "borderColor": "rgb(75, 192, 192)", "backgroundColor": "rgba(75, 192, 192, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "LG\uc804\uc790 \ud718\uc13c \uc624\ube0c\uc81c\uceec\ub809\uc158 \uc704\ub108 2in1 \uc5d0\uc5b4\ucee8 FQ17HDWHP2 \ubc29\ubb38\uc124\uce58", "data": [1750000, 1750000], "borderColor": "rgb(255, 99, 132)", "backgroundColor": "rgba(255, 99, 132, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uc0e4\uc624\ubbf8 1S \ubbf8\uc9c0\uc544 \ubaa8\ub2c8\ud130 \uc7a5\ucc29 \ub7a8\ud504 MJGJD02YL", "data": [40500, 40500], "borderColor": "rgb(54, 162, 235)", "backgroundColor": "rgba(54, 162, 235, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\ud0c0\ud3ec \uc2e4\uc678\uc6a9 2K QHD \ubc30\ud130\ub9ac \uce74\uba54\ub77c \ud0dc\uc591\uad11 \ucda9\uc804 \ud328\ub110 \ud0a4\ud2b8 \uc138\ud2b8", "data": [125100, null], "borderColor": "rgb(255, 205, 86)", "backgroundColor": "rgba(255, 205, 86, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}];
         let allDates = ["05", "12"];
         
         function initChart() {
