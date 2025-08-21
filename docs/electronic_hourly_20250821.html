@@ -363,7 +363,7 @@
                 <div class="filter-item">
                     <label for="category3Filter">구분3:</label>
                     <select id="category3Filter" onchange="filterByCategory()">
-                        <option value="전체">전체</option><option value="CCTV">CCTV</option><option value="모니터 조명">모니터 조명</option><option value="에어컨">에어컨</option>
+                        <option value="전체">전체</option><option value="CCTV">CCTV</option><option value="공유기">공유기</option><option value="모니터 조명">모니터 조명</option><option value="에어컨">에어컨</option>
                     </select>
                 </div>
             </div>
@@ -421,14 +421,23 @@
                             <a href="https://link.coupang.com/a/cJlm4D" target="_blank" class="buy-button">구매하기</a>
                         </div>
             
+                        <div class="product-item">
+                            <div class="color-dot" style="background-color: rgb(153, 102, 255);"></div>
+                            <div class="product-info">
+                                <div class="product-name">티피링크 300 Mbps 4G LTE 무선 공유기</div>
+                                <div class="product-price">최신가: 61,700원</div>
+                            </div>
+                            <a href="https://link.coupang.com/a/cLDB3V" target="_blank" class="buy-button">구매하기</a>
+                        </div>
+            
             </div>
         </div>
         
         <div class="stats">
             <h3>📈 차트 통계</h3>
-            <p>총 제품 수: 4개</p>
-            <p>총 데이터 포인트: 8개</p>
-            <p>최신 업데이트: 2025-08-21 12:00:00</p>
+            <p>총 제품 수: 5개</p>
+            <p>총 데이터 포인트: 13개</p>
+            <p>최신 업데이트: 2025-08-21 19:00:00</p>
             <p>현재 선택: <span id="currentCategory">전체</span></p>
         </div>
     </div>
@@ -454,8 +463,8 @@
     <script>
         // 전역 변수
         let priceChart;
-        let allDatasets = [{"label": "LG\uc804\uc790 \uc778\ubc84\ud130 56.9\u33a1(17.2\ud3c9) \ud718\uc13c \uc624\ube0c\uc81c\uceec\ub809\uc158 \uc704\ub108 \uc5d0\uc5b4\ucee8 FQ17HDWHCNP1 \ubc29\ubb38\uc124\uce58", "data": [1260000, 1450000], "borderColor": "rgb(75, 192, 192)", "backgroundColor": "rgba(75, 192, 192, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "LG\uc804\uc790 \ud718\uc13c \uc624\ube0c\uc81c\uceec\ub809\uc158 \uc704\ub108 2in1 \uc5d0\uc5b4\ucee8 FQ17HDWHP2 \ubc29\ubb38\uc124\uce58", "data": [1750000, 1750000], "borderColor": "rgb(255, 99, 132)", "backgroundColor": "rgba(255, 99, 132, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uc0e4\uc624\ubbf8 1S \ubbf8\uc9c0\uc544 \ubaa8\ub2c8\ud130 \uc7a5\ucc29 \ub7a8\ud504 MJGJD02YL", "data": [40500, 40500], "borderColor": "rgb(54, 162, 235)", "backgroundColor": "rgba(54, 162, 235, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\ud0c0\ud3ec \uc2e4\uc678\uc6a9 2K QHD \ubc30\ud130\ub9ac \uce74\uba54\ub77c \ud0dc\uc591\uad11 \ucda9\uc804 \ud328\ub110 \ud0a4\ud2b8 \uc138\ud2b8", "data": [125100, 125100], "borderColor": "rgb(255, 205, 86)", "backgroundColor": "rgba(255, 205, 86, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}];
-        let allDates = ["05", "12"];
+        let allDatasets = [{"label": "LG\uc804\uc790 \uc778\ubc84\ud130 56.9\u33a1(17.2\ud3c9) \ud718\uc13c \uc624\ube0c\uc81c\uceec\ub809\uc158 \uc704\ub108 \uc5d0\uc5b4\ucee8 FQ17HDWHCNP1 \ubc29\ubb38\uc124\uce58", "data": [1260000, 1450000, 1450000], "borderColor": "rgb(75, 192, 192)", "backgroundColor": "rgba(75, 192, 192, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "LG\uc804\uc790 \ud718\uc13c \uc624\ube0c\uc81c\uceec\ub809\uc158 \uc704\ub108 2in1 \uc5d0\uc5b4\ucee8 FQ17HDWHP2 \ubc29\ubb38\uc124\uce58", "data": [1750000, 1750000, 1750000], "borderColor": "rgb(255, 99, 132)", "backgroundColor": "rgba(255, 99, 132, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\uc0e4\uc624\ubbf8 1S \ubbf8\uc9c0\uc544 \ubaa8\ub2c8\ud130 \uc7a5\ucc29 \ub7a8\ud504 MJGJD02YL", "data": [40500, 40500, 40500], "borderColor": "rgb(54, 162, 235)", "backgroundColor": "rgba(54, 162, 235, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\ud0c0\ud3ec \uc2e4\uc678\uc6a9 2K QHD \ubc30\ud130\ub9ac \uce74\uba54\ub77c \ud0dc\uc591\uad11 \ucda9\uc804 \ud328\ub110 \ud0a4\ud2b8 \uc138\ud2b8", "data": [125100, 125100, 125100], "borderColor": "rgb(255, 205, 86)", "backgroundColor": "rgba(255, 205, 86, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}, {"label": "\ud2f0\ud53c\ub9c1\ud06c 300 Mbps 4G LTE \ubb34\uc120 \uacf5\uc720\uae30", "data": [null, null, 61700], "borderColor": "rgb(153, 102, 255)", "backgroundColor": "rgba(153, 102, 255, 0.2)", "tension": 0.3, "pointRadius": 5, "pointHoverRadius": 8, "fill": false, "borderWidth": 3, "spanGaps": true}];
+        let allDates = ["05", "12", "19"];
         
         function initChart() {
             const canvas = document.getElementById('priceChart');
@@ -578,7 +587,7 @@
             const category3Filter = document.getElementById('category3Filter').value;
             
             // 제품별 구분 정보
-            const productCategories = {"LG\uc804\uc790 \uc778\ubc84\ud130 56.9\u33a1(17.2\ud3c9) \ud718\uc13c \uc624\ube0c\uc81c\uceec\ub809\uc158 \uc704\ub108 \uc5d0\uc5b4\ucee8 FQ17HDWHCNP1 \ubc29\ubb38\uc124\uce58": {"\uad6c\ubd842": "LG", "\uad6c\ubd843": "\uc5d0\uc5b4\ucee8"}, "LG\uc804\uc790 \ud718\uc13c \uc624\ube0c\uc81c\uceec\ub809\uc158 \uc704\ub108 2in1 \uc5d0\uc5b4\ucee8 FQ17HDWHP2 \ubc29\ubb38\uc124\uce58": {"\uad6c\ubd842": "LG", "\uad6c\ubd843": "\uc5d0\uc5b4\ucee8"}, "\uc0e4\uc624\ubbf8 1S \ubbf8\uc9c0\uc544 \ubaa8\ub2c8\ud130 \uc7a5\ucc29 \ub7a8\ud504 MJGJD02YL": {"\uad6c\ubd842": "\uc0e4\uc624\ubbf8", "\uad6c\ubd843": "\ubaa8\ub2c8\ud130 \uc870\uba85"}, "\ud0c0\ud3ec \uc2e4\uc678\uc6a9 2K QHD \ubc30\ud130\ub9ac \uce74\uba54\ub77c \ud0dc\uc591\uad11 \ucda9\uc804 \ud328\ub110 \ud0a4\ud2b8 \uc138\ud2b8": {"\uad6c\ubd842": "\ud0c0\ud3ec", "\uad6c\ubd843": "CCTV"}};
+            const productCategories = {"LG\uc804\uc790 \uc778\ubc84\ud130 56.9\u33a1(17.2\ud3c9) \ud718\uc13c \uc624\ube0c\uc81c\uceec\ub809\uc158 \uc704\ub108 \uc5d0\uc5b4\ucee8 FQ17HDWHCNP1 \ubc29\ubb38\uc124\uce58": {"\uad6c\ubd842": "LG", "\uad6c\ubd843": "\uc5d0\uc5b4\ucee8"}, "LG\uc804\uc790 \ud718\uc13c \uc624\ube0c\uc81c\uceec\ub809\uc158 \uc704\ub108 2in1 \uc5d0\uc5b4\ucee8 FQ17HDWHP2 \ubc29\ubb38\uc124\uce58": {"\uad6c\ubd842": "LG", "\uad6c\ubd843": "\uc5d0\uc5b4\ucee8"}, "\uc0e4\uc624\ubbf8 1S \ubbf8\uc9c0\uc544 \ubaa8\ub2c8\ud130 \uc7a5\ucc29 \ub7a8\ud504 MJGJD02YL": {"\uad6c\ubd842": "\uc0e4\uc624\ubbf8", "\uad6c\ubd843": "\ubaa8\ub2c8\ud130 \uc870\uba85"}, "\ud0c0\ud3ec \uc2e4\uc678\uc6a9 2K QHD \ubc30\ud130\ub9ac \uce74\uba54\ub77c \ud0dc\uc591\uad11 \ucda9\uc804 \ud328\ub110 \ud0a4\ud2b8 \uc138\ud2b8": {"\uad6c\ubd842": "\ud0c0\ud3ec", "\uad6c\ubd843": "CCTV"}, "\ud2f0\ud53c\ub9c1\ud06c 300 Mbps 4G LTE \ubb34\uc120 \uacf5\uc720\uae30": {"\uad6c\ubd842": "\ud0c0\ud3ec", "\uad6c\ubd843": "\uacf5\uc720\uae30"}};
             
             // 필터링된 데이터셋 생성
             const filteredDatasets = allDatasets.filter(dataset => {
