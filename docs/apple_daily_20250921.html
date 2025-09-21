@@ -95,15 +95,20 @@
         }
         
         .chart-wrapper {
-            min-width: 1200px; /* 차트 최소 너비 설정 (PC 최적화) */
-            width: max-content; /* 내용에 맞게 너비 설정 */
-            height: 1600px;    /* 고정 높이 설정 */
+            width: max-content !important;     /* 내용에 맞게 동적 너비 설정 */
+            height: 600px !important;          /* 고정 높이 강제 설정 */
+            min-width: 1200px !important;     /* 최소 너비 강제 설정 */
+            min-height: 600px !important;     /* 최소 높이 강제 설정 */
             position: relative;
         }
         
         .chart-container canvas {
             display: block !important;
-            max-width: none;    /* 최대 너비 제한 해제 */
+            width: max-content !important;   /* 캔버스 너비 동적 설정 */
+            height: 600px !important;        /* 캔버스 높이 강제 설정 */
+            min-width: 1200px !important;    /* 캔버스 최소 너비 강제 설정 */
+            min-height: 600px !important;    /* 캔버스 최소 높이 강제 설정 */
+            max-width: none !important;      /* 최대 너비 제한 해제 */
         }
         
         /* 스크롤바 스타일링 */
@@ -728,9 +733,31 @@
                     datasets: allDatasets
                 },
                 options: {
-                    responsive: true,  /* 반응형 활성화 */
+                    responsive: true,  /* 반응형 활성화 - 마우스 이벤트를 위해 필요 */
                     maintainAspectRatio: false,
-                    aspectRatio: 2,  /* 고정 비율 설정 (너비:높이 = 2:1) */
+                    aspectRatio: function(context) {
+                        const dataLength = context.chart.data.labels.length;
+                        const minWidth = 1200;
+                        const pointSpacing = 20; // 포인트 간격 (픽셀)
+                        const calculatedWidth = Math.max(minWidth, dataLength * pointSpacing);
+                        return calculatedWidth / 600; // 높이 600px 기준으로 비율 계산
+                    },
+                    layout: {
+                        padding: {
+                            left: 0,    /* 왼쪽 패딩 제거 */
+                            right: 0,   /* 오른쪽 패딩 제거 */
+                            top: 0,     /* 위쪽 패딩 제거 */
+                            bottom: 0   /* 아래쪽 패딩 제거 */
+                        }
+                    },
+                    elements: {
+                        point: {
+                            radius: 8,
+                            hoverRadius: 12,
+                            borderWidth: 3,
+                            hoverBorderWidth: 4
+                        }
+                    },
                     plugins: {
                         legend: {
                             display: false
@@ -838,8 +865,10 @@
                                 minRotation: 45,
                                 autoSkip: false,  /* 모든 라벨 표시 */
                                 maxTicksLimit: 100, /* 최대 라벨 수 증가 */
-                                padding: 100  /* 포인트 간격 증가 */
-                            }
+                                padding: 10  /* 포인트 간격 최소화 */
+                            },
+                            offset: false,  /* 차트 시작점을 왼쪽 끝으로 이동 */
+                            bounds: 'ticks'  /* 데이터 범위를 틱에 맞춤 */
                         },
                         y: {
                             display: true,
@@ -854,6 +883,18 @@
                                 callback: function(value) {
                                     return value.toLocaleString() + '원';
                                 }
+                            },
+                            offset: false,  /* 차트 시작점을 아래쪽 끝으로 이동 */
+                            beginAtZero: false,  /* 0부터 시작하지 않음 */
+                            suggestedMin: function(context) {
+                                const values = context.chart.data.datasets.flatMap(dataset => dataset.data);
+                                const minValue = Math.min(...values);
+                                return minValue * 0.95;  /* 최소값의 95%부터 시작 */
+                            },
+                            suggestedMax: function(context) {
+                                const values = context.chart.data.datasets.flatMap(dataset => dataset.data);
+                                const maxValue = Math.max(...values);
+                                return maxValue * 1.05;  /* 최대값의 105%까지 표시 */
                             }
                         }
                     },
