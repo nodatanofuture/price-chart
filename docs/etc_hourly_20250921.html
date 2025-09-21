@@ -97,7 +97,7 @@
         .chart-wrapper {
             min-width: 1800px; /* 차트 최소 너비를 더 넓게 설정 (PC 최적화) */
             width: max-content; /* 내용에 맞게 너비 설정 */
-            height: 400px;     /* 고정 높이 설정 */
+            height: 600px;     /* 고정 높이 설정 (더 높게) */
             position: relative;
         }
         
@@ -667,7 +667,7 @@
                 options: {
                     responsive: true,  /* 반응형 활성화 */
                     maintainAspectRatio: false,
-                    aspectRatio: 2,  /* 고정 비율 설정 (너비:높이 = 2:1) */
+                    aspectRatio: 3,  /* 고정 비율 설정 (너비:높이 = 3:1) - 더 넓게 */
                     plugins: {
                         legend: {
                             display: false
