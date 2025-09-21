@@ -95,7 +95,7 @@
         }
         
         .chart-wrapper {
-            min-width: 1800px; /* 차트 최소 너비를 더 넓게 설정 (PC 최적화) */
+            min-width: 2400px; /* 차트 최소 너비를 매우 넓게 설정 (PC 최적화) */
             width: max-content; /* 내용에 맞게 너비 설정 */
             height: 600px;     /* 고정 높이 설정 (더 높게) */
             position: relative;
@@ -103,7 +103,10 @@
         
         .chart-container canvas {
             display: block !important;
-            max-width: none;    /* 최대 너비 제한 해제 */
+            max-width: none !important;    /* 최대 너비 제한 해제 */
+            min-width: 2400px !important; /* 캔버스 최소 너비 강제 설정 */
+            width: 2400px !important;      /* 캔버스 너비 강제 설정 */
+            height: 600px !important;      /* 캔버스 높이 강제 설정 */
         }
         
         /* 스크롤바 스타일링 */
@@ -721,7 +724,8 @@
                 options: {
                     responsive: true,  /* 반응형 활성화 */
                     maintainAspectRatio: false,
-                    aspectRatio: 3,  /* 고정 비율 설정 (너비:높이 = 3:1) - 더 넓게 */
+                    aspectRatio: 4,  /* 고정 비율 설정 (너비:높이 = 4:1) - 매우 넓게 */
+                    devicePixelRatio: 1,  /* 고해상도 디스플레이 대응 */
                     plugins: {
                         legend: {
                             display: false
